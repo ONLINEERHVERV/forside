@@ -398,6 +398,25 @@ body{font-family:var(--f);color:var(--g700);background:var(--w);-webkit-font-smo
     </div>
   </div>
 </section>
+<script>
+  function sendHeight() {
+    const height = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
+
+    window.parent.postMessage(
+      { type: "setHeight", height: height },
+      "*"
+    );
+  }
+
+  window.addEventListener("load", sendHeight);
+  window.addEventListener("resize", sendHeight);
+
+  const observer = new ResizeObserver(sendHeight);
+  observer.observe(document.body);
+</script>
 
 </body>
 </html>
