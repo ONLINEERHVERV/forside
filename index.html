@@ -17,8 +17,8 @@
   --w:#fff;--r:14px;
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--f);color:var(--g700);background:var(--w);-webkit-font-smoothing:antialiased;line-height:1.6}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+body{font-family:var(--f);color:var(--g700);background:var(--w);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;overflow:hidden}
 
 /* ═══ HERO ═══ */
 .hero{padding:96px 24px 80px;text-align:center;position:relative;overflow:hidden}
@@ -64,9 +64,9 @@ body{font-family:var(--f);color:var(--g700);background:var(--w);-webkit-font-smo
 .path-card .path-link{font-size:14px;font-weight:600;color:var(--blue);text-decoration:none;display:inline-flex;align-items:center;gap:4px}
 
 /* ═══ COURSES ═══ */
-.courses{padding:88px 24px;background:var(--g50);border-top:1px solid var(--g100)}
+.courses{padding:88px 24px;background:var(--g50);border-top:1px solid var(--g100);overflow:hidden}
 .courses-layout{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:32px;align-items:start}
-.ai-featured{background:var(--g900);border-radius:20px;padding:36px;color:#fff;position:relative;overflow:hidden}
+.ai-featured{background:var(--g900);border-radius:20px;padding:36px;color:#fff;position:relative;overflow:hidden;min-width:0}
 .ai-featured::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(37,99,235,0.15),transparent 60%);pointer-events:none}
 .ai-featured .ai-tag{display:inline-block;padding:5px 12px;border-radius:8px;background:rgba(37,99,235,0.2);color:var(--b200);font-size:11px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:16px}
 .ai-featured h3{font-size:26px;font-weight:800;margin-bottom:8px;letter-spacing:-0.02em;position:relative}
@@ -79,8 +79,8 @@ body{font-family:var(--f);color:var(--g700);background:var(--w);-webkit-font-smo
 .ai-featured .ai-price .now{font-size:28px;font-weight:800;color:var(--blue)}
 .ai-featured .btn-b{width:100%;position:relative}
 
-.branch-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.branch-card{background:var(--w);border:1px solid var(--g200);border-radius:14px;padding:20px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:all 0.2s;text-decoration:none;color:inherit}
+.branch-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}
+.branch-card{background:var(--w);border:1px solid var(--g200);border-radius:14px;padding:20px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:all 0.2s;text-decoration:none;color:inherit;min-width:0}
 .branch-card:hover{border-color:var(--blue);box-shadow:0 4px 16px rgba(0,0,0,0.06);transform:translateY(-1px)}
 .branch-icon{width:44px;height:44px;border-radius:10px;background:var(--b50);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
 .branch-card h4{font-size:14px;font-weight:700;color:var(--g900);margin-bottom:2px}
@@ -125,44 +125,57 @@ body{font-family:var(--f);color:var(--g700);background:var(--w);-webkit-font-smo
 .cta-box p{font-size:16px;color:var(--g400);max-width:440px;margin:0 auto 32px;position:relative;line-height:1.6}
 .cta-box .btn-b{position:relative;padding:16px 36px;font-size:16px}
 
-/* ═══ NEWSLETTER ═══ */
-.nl{padding:64px 24px;border-top:1px solid var(--g100)}
-.nl-in{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
-.nl-text h3{font-size:20px;font-weight:700;color:var(--g900);margin-bottom:4px}
-.nl-text p{font-size:14px;color:var(--g500)}
-.nl-form{display:flex;gap:8px}
-.nl-form input{padding:12px 16px;border:1.5px solid var(--g200);border-radius:10px;font-family:var(--f);font-size:14px;width:280px;outline:none;color:var(--g900)}
-.nl-form input:focus{border-color:var(--blue)}
-.nl-form input::placeholder{color:var(--g300)}
+/* ═══ VIL DU VIDE MERE ═══ */
+.vdvm{padding:80px 24px;background:var(--g50);border-top:1px solid var(--g100)}
+.vdvm-title{font-size:22px;font-weight:700;color:var(--g900);margin-bottom:32px;max-width:1120px;margin-left:auto;margin-right:auto}
+.vdvm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1120px;margin:0 auto}
+.vdvm-card{background:var(--w);border:1px solid var(--g200);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;transition:all 0.25s}
+.vdvm-card:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,0.06)}
+.vdvm-img{width:100%;height:180px;object-fit:cover;display:block}
+.vdvm-img-wrap{position:relative;overflow:hidden}
+.vdvm-badge{position:absolute;top:12px;left:12px;padding:4px 10px;border-radius:6px;background:rgba(0,0,0,0.5);color:#fff;font-size:11px;font-weight:600;backdrop-filter:blur(4px)}
+.vdvm-body{padding:20px}
+.vdvm-body h3{font-size:16px;font-weight:700;color:var(--g900);margin-bottom:8px}
+.vdvm-body p{font-size:13px;color:var(--g500);line-height:1.6}
 
 .hidden{display:none!important}
 @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .fade-in{animation:fadeUp 0.6s ease}
 
+@media(max-width:1060px){
+  .courses-layout{grid-template-columns:1fr;max-width:600px;margin:0 auto}
+  .branch-grid{grid-template-columns:1fr 1fr}
+}
 @media(max-width:900px){
+  .wrap{padding:0 8px}
+  .courses{overflow:hidden}
+  .courses-layout{grid-template-columns:1fr;max-width:100%}
+  .ai-featured{max-width:100%}
+  .branch-grid{max-width:100%}
   .paths-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
-  .courses-layout{grid-template-columns:1fr}
+  .courses{padding:60px 16px}
+  .ai-featured{padding:28px 20px}
   .yd-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
   .yd-card .yd-foot{flex-direction:column;gap:16px;align-items:stretch;text-align:center}
   .social-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
   .how-grid{grid-template-columns:1fr 1fr}
   .branch-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
-  .nl-in{flex-direction:column;text-align:center}
-}
-@media(min-width:641px) and (max-width:900px){
-  .branch-grid{grid-template-columns:1fr 1fr}
+  .vdvm-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:640px){
   .hero{padding:64px 20px 60px}
   .hero-btns{flex-direction:column;align-items:center}
   .trust-in{flex-direction:column;gap:20px}
   .how-grid{grid-template-columns:1fr}
-  .nl-form{flex-direction:column;width:100%}
-  .nl-form input{width:100%}
-  .paths,.courses,.ydelser,.social,.how,.cta-section{padding-left:16px;padding-right:16px}
+  .paths,.courses,.ydelser,.social,.how,.cta-section,.vdvm{padding-left:16px;padding-right:16px}
+  .courses-layout{grid-template-columns:1fr}
+  .ai-featured{padding:24px 16px}
+  .branch-grid{grid-template-columns:1fr}
   .wrap{padding:0 8px}
   .yd-card{padding:32px 24px}
+  .vdvm-grid{grid-template-columns:1fr}
+  .vdvm{padding:48px 16px}
 }
 </style>
 </head>
@@ -389,19 +402,29 @@ body{font-family:var(--f);color:var(--g700);background:var(--w);-webkit-font-smo
   </div>
 </section>
 
-<!-- ═══ NEWSLETTER ═══ -->
-<section class="nl">
-  <div class="nl-in">
-    <div class="nl-text">
-      <h3>Få AI-workflows og tips direkte i din indbakke</h3>
-      <p>Korte guides, templates og eksempler til hjemmeside, annoncering og AI.</p>
-    </div>
-    <div class="nl-form">
-      <input type="email" placeholder="Din e-mailadresse">
-      <button class="btn btn-b" style="padding:12px 20px">Tilmeld →</button>
-    </div>
+<!-- ═══ VIL DU VIDE MERE ═══ -->
+<section class="vdvm">
+  <h2 class="vdvm-title">Vil du vide mere?</h2>
+  <div class="vdvm-grid">
+    <a href="https://www.onlineerhverv.dk/kursus-oversigt" class="vdvm-card">
+      <div class="vdvm-img-wrap"><img class="vdvm-img" src="https://cdn.prod.website-files.com/66960fd6d176e460a6a3429f/696783a94e5bfbc5e63e5c9d_online_erhverv_se_kurser.webp" alt="Kurser"><span class="vdvm-badge">Kurser</span></div>
+      <div class="vdvm-body"><h3>Se kurser</h3><p>Udforsk 6 branchekurser – eller AI for Selvstændige, hvis du vil bygge workflows og få mere output på kortere tid.</p></div>
+    </a>
+    <a href="https://www.onlineerhverv.dk/fra-ide-til-online" class="vdvm-card">
+      <div class="vdvm-img-wrap"><img class="vdvm-img" src="https://cdn.prod.website-files.com/66960fd6d176e460a6a3429f/6992fb4622ba817bd4e97088_online_erhverv_ydelser-p-1080.png" alt="Ydelser"><span class="vdvm-badge">Ydelser</span></div>
+      <div class="vdvm-body"><h3>Se ydelser</h3><p>Har du brug for at det bare bliver gjort? Se hvad vi kan bygge for dig — fra hjemmeside til branding og markedsføring.</p></div>
+    </a>
+    <a href="https://www.onlineerhverv.dk/blogs" class="vdvm-card">
+      <div class="vdvm-img-wrap"><img class="vdvm-img" src="https://cdn.prod.website-files.com/66960fd6d176e460a6a3429f/696783d5413292a4ac6ce85a_online_erhverv_blogs.webp" alt="Blogs"><span class="vdvm-badge">Blogs</span></div>
+      <div class="vdvm-body"><h3>Læs blogs</h3><p>Få konkrete guides om SEO, hjemmeside, annoncering – og hvordan du bruger AI i praksis til content og drift.</p></div>
+    </a>
+    <a href="https://www.onlineerhverv.dk/kontakt-os" class="vdvm-card">
+      <div class="vdvm-img-wrap"><img class="vdvm-img" src="https://cdn.prod.website-files.com/66960fd6d176e460a6a3429f/696783ec739c1c1e9b5649f3_online_erhverv_kontakt_os.webp" alt="Kontakt os"><span class="vdvm-badge">Tag kontakt til os</span></div>
+      <div class="vdvm-body"><h3>Kontakt os</h3><p>Har du spørgsmål, eller vil du have hjælp til at vælge det rigtige kursus? Skriv til os – så peger vi dig i den rigtige retning.</p></div>
+    </a>
   </div>
 </section>
+
 
 <script>
   function sendHeight() {
