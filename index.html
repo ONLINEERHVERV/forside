@@ -141,12 +141,13 @@ body{font-family:var(--f);color:var(--g700);background:var(--w);-webkit-font-smo
 .fade-in{animation:fadeUp 0.6s ease}
 
 @media(max-width:900px){
-  .paths-grid{grid-template-columns:1fr}
+  .paths-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
   .courses-layout{grid-template-columns:1fr}
-  .yd-grid{grid-template-columns:1fr}
-  .social-grid{grid-template-columns:1fr}
+  .yd-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+  .yd-card .yd-foot{flex-direction:column;gap:16px;align-items:stretch;text-align:center}
+  .social-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
   .how-grid{grid-template-columns:1fr 1fr}
-  .branch-grid{grid-template-columns:1fr}
+  .branch-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
   .nl-in{flex-direction:column;text-align:center}
 }
 @media(min-width:641px) and (max-width:900px){
@@ -159,6 +160,9 @@ body{font-family:var(--f);color:var(--g700);background:var(--w);-webkit-font-smo
   .how-grid{grid-template-columns:1fr}
   .nl-form{flex-direction:column;width:100%}
   .nl-form input{width:100%}
+  .paths,.courses,.ydelser,.social,.how,.cta-section{padding-left:16px;padding-right:16px}
+  .wrap{padding:0 8px}
+  .yd-card{padding:32px 24px}
 }
 </style>
 </head>
@@ -237,7 +241,7 @@ body{font-family:var(--f);color:var(--g700);background:var(--w);-webkit-font-smo
         <div class="ai-tag">🔥 Populært</div>
         <h3>AI for Selvstændige</h3>
         <div class="ai-sub">Bliv selvkørende med AI — spar tid, penge og bliv mere effektiv</div>
-        <div class="ai-stats">
+        <div class="ai-stats" style="display:none">
           <div class="ai-stat">⭐ <strong>5.0</strong> (73)</div>
           <div class="ai-stat">👥 <strong>271</strong> kursister</div>
         </div>
@@ -252,32 +256,32 @@ body{font-family:var(--f);color:var(--g700);background:var(--w);-webkit-font-smo
       <div class="branch-grid">
         <a href="https://www.onlineerhverv.dk/kursus/servicevirksomheder" class="branch-card">
           <div class="branch-icon">💼</div>
-          <div><h4>Servicevirksomheder</h4><div class="branch-meta">⭐ 4.8 · 219 kursister</div></div>
+          <div><h4>Servicevirksomheder</h4><div class="branch-meta">⭐ 4.8</div></div>
           <div class="branch-price">4.999 kr.</div>
         </a>
         <a href="https://www.onlineerhverv.dk/kursus/restauranter-og-cafeer" class="branch-card">
           <div class="branch-icon">🍽️</div>
-          <div><h4>Restauranter og caféer</h4><div class="branch-meta">⭐ 4.8 · 245 kursister</div></div>
+          <div><h4>Restauranter og caféer</h4><div class="branch-meta">⭐ 4.8</div></div>
           <div class="branch-price">4.999 kr.</div>
         </a>
         <a href="https://www.onlineerhverv.dk/kursus/freelancere-og-konsulenter" class="branch-card">
           <div class="branch-icon">💻</div>
-          <div><h4>Freelancere og konsulenter</h4><div class="branch-meta">⭐ 5.0 · 342 kursister</div></div>
+          <div><h4>Freelancere og konsulenter</h4><div class="branch-meta">⭐ 5.0</div></div>
           <div class="branch-price">3.999 kr.</div>
         </a>
         <a href="https://www.onlineerhverv.dk/kursus/handvaerkere-og-servicefag" class="branch-card">
           <div class="branch-icon">🔨</div>
-          <div><h4>Håndværkere og fagfolk</h4><div class="branch-meta">⭐ 5.0 · 125 kursister</div></div>
+          <div><h4>Håndværkere og fagfolk</h4><div class="branch-meta">⭐ 5.0</div></div>
           <div class="branch-price">3.999 kr.</div>
         </a>
         <a href="https://www.onlineerhverv.dk/kursus/webshop-til-fysiske-produkter" class="branch-card">
           <div class="branch-icon">🛒</div>
-          <div><h4>Webshops</h4><div class="branch-meta">⭐ 4.8 · 211 kursister</div></div>
+          <div><h4>Webshops</h4><div class="branch-meta">⭐ 4.8</div></div>
           <div class="branch-price">5.999 kr.</div>
         </a>
         <a href="https://www.onlineerhverv.dk/kursus/skonhed-og-velvaere" class="branch-card">
           <div class="branch-icon">✨</div>
-          <div><h4>Skønhed og klinikker</h4><div class="branch-meta">⭐ 5.0 · 135 kursister</div></div>
+          <div><h4>Skønhed og klinikker</h4><div class="branch-meta">⭐ 5.0</div></div>
           <div class="branch-price">4.799 kr.</div>
         </a>
       </div>
@@ -398,6 +402,7 @@ body{font-family:var(--f);color:var(--g700);background:var(--w);-webkit-font-smo
     </div>
   </div>
 </section>
+
 <script>
   function sendHeight() {
     const height = Math.max(
